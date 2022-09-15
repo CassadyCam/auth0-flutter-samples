@@ -27,9 +27,11 @@ class _ExampleAppState extends State<ExampleApp> {
   }
 
   Future<void> login() async {
+    print("check 1");
     var credentials = await auth0
         .webAuthentication(scheme: dotenv.env['AUTH0_CUSTOM_SCHEME'])
         .login();
+    print("check 2");
 
     setState(() {
       _user = credentials.user;
